@@ -7,6 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.st.genesys.dataLayer.DatabaseHelper;
+import com.example.st.genesys.dataLayer.entities.Employee;
+
 public class employeeSignup extends AppCompatActivity {
 DatabaseHelper mydb;
  EditText fname,lname,addres,jobdes,emplypassword,Employcode;
@@ -32,10 +35,13 @@ DatabaseHelper mydb;
       Employsubmit_btn.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              boolean insertDATAemploy1 = mydb.insertDATAemploy(fname.getText().toString(),lname.getText().toString(),addres.getText().toString(),jobdes.getText().toString()
-                      , emplypassword.getText().toString(),Integer.parseInt(Employcode.getText().toString()));
+              Employee employee = new Employee(fname.getText().toString(), lname.getText().toString(),
+                      addres.getText().toString(), jobdes.getText().toString(), emplypassword.getText().toString(),
+                      Integer.parseInt(Employcode.getText().toString()));
 
-              if (insertDATAemploy1 = true){
+              long result = Employee.create(employeeSignup.this,employee);
+
+              if (result != -1){
                   Toast.makeText(employeeSignup.this,"Sign up is successful",Toast.LENGTH_LONG ).show();
               }else
                   Toast.makeText(employeeSignup.this,"sign UP NOT successful", Toast.LENGTH_LONG).show();

@@ -1,7 +1,6 @@
 package com.example.st.genesys;
 
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.st.genesys.dataLayer.DatabaseHelper;
+import com.example.st.genesys.dataLayer.entities.Company;
+
 public class companySignup extends AppCompatActivity {
-    DatabaseHelper mydb;
+    SQLiteDatabase db;
     Button company_btn;
     EditText compaddress, compName,Regcode,type,copass;
 
@@ -20,7 +22,7 @@ public class companySignup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company_signup);
 
-        mydb = new DatabaseHelper(this);
+        db = DatabaseHelper.getInstance(this);
 
         compName = (EditText) findViewById(R.id.etcompname);
         compaddress = (EditText) findViewById(R.id.etcompAddress);
@@ -38,9 +40,13 @@ public class companySignup extends AppCompatActivity {
         company_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean insertDataCom = mydb.inserDataCom(compName.getText().toString(), compaddress.getText().toString(), Regcode.getText().toString(),type.getText().toString(), copass.getText().toString());
+                Company company = new Company(compName.getText().toString(),compaddress.getText().toString(),
+                        Regcode.getText().toString(), type.getText().toString(),copass.getText().toString());
+                long result = Company.create(companySignup.this, company);
 
-                if(insertDataCom=true)
+
+
+                if(result != -1)
                     Toast.makeText(companySignup.this,"Sign UP Successful",Toast.LENGTH_LONG).show();
                 else
                     Toast.makeText(companySignup.this,"Sign up not Successful", Toast.LENGTH_LONG).show();
