@@ -1,8 +1,8 @@
 package com.example.st.genesys;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,26 +13,38 @@ public class LoginPage extends AppCompatActivity  {
     Button log ,regis;
    private EditText user,pass;
 
+   private TextView lblIndividual, lblCompany;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 
-        regis = (Button) findViewById(R.id.register_btn);
-        user = (EditText) findViewById(R.id.user_edit);
-        pass = (EditText) findViewById(R.id.passowrd_edit);
-        log = (Button) findViewById(R.id.login_btn);
+        user = findViewById(R.id.txtUsername);
+        pass = findViewById(R.id.txtPassword);
+        log =  findViewById(R.id.btnLogin);
 
-     regis.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View v) {
-         Intent intent = new Intent(LoginPage.this,DecidePage.class);
-         startActivity(intent);
+        lblIndividual = findViewById(R.id.lblCreateAccount);
+        lblCompany = findViewById(R.id.lblCreateCompany);
 
-         }
-     });
+        lblIndividual.setOnClickListener(new View.OnClickListener(){
 
+            @Override
+            public void onClick(View view) {
 
+                startActivity(new Intent(LoginPage.this, employeeSignup.class));
+            }
+        });
+
+        lblCompany.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(LoginPage.this, companySignup.class));
+            }
+        });
 
 log.setOnClickListener(new View.OnClickListener() {
     @Override

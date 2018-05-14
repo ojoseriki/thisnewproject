@@ -1,98 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
     tools:context="com.example.st.genesys.goodsPage">
 
-    <Button
-        android:id="@+id/button4"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="@color/colorPrimaryDark"
-        android:text="Main Menu" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/quntity_good"
-        android:layout_below="@+id/button4"
-        android:layout_marginEnd="25dp"
-        android:layout_marginTop="16dp"
-        android:text="Quantity of goods sold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/quntity_good"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:inputType="textPersonName" />
+            <TextView
+                style="@style/titleStyle"
+                android:text="Calculator" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView4"
-        android:layout_below="@+id/quntity_good"
-        android:text="Total price of goods" />
 
-    <EditText
-        android:id="@+id/price_good"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/quntity_good"
-        android:layout_below="@+id/textView3"
-        android:ems="10"
-        android:inputType="textPersonName|numberDecimal" />
+            <EditText
+                android:id="@+id/quntity_good"
+                style="@style/inputStyle.Text"
+                android:ems="10"
+                android:hint="Quantity"
+                android:inputType="textPersonName"/>
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_below="@+id/price_good"
-        android:text="Duration worked (in hours)" />
 
-    <EditText
-        android:id="@+id/time_goods"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/price_good"
-        android:layout_below="@+id/textView4"
-        android:ems="10"
-        android:inputType="number" />
+            <EditText
+                android:id="@+id/price_good"
+                style="@style/inputStyle.Text"
+                android:ems="10"
+                android:hint="Total Price"
+                android:inputType="textPersonName|numberDecimal"/>
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView4"
-        android:layout_below="@+id/time_goods"
-        android:text="DATE" />
+            <EditText
+                android:id="@+id/time_goods"
+                style="@style/inputStyle.Text"
+                android:ems="10"
+                android:hint="No idea"
+                android:inputType="number"/>
 
-    <EditText
-        android:id="@+id/date_good"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/time_goods"
-        android:layout_below="@+id/textView5"
-        android:ems="10"
-        android:inputType="date" />
+            <EditText
+                android:id="@+id/date_good"
+                style="@style/inputStyle.Text"
+                android:ems="10"
+                android:hint="Date"
+                android:inputType="date"/>
 
-    <Button
-        android:id="@+id/submit_goods"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView5"
-        android:layout_below="@+id/date_good"
-        android:layout_marginTop="48dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="Submit" />
-</RelativeLayout>
+            <Button
+                android:id="@+id/submit_goods"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@color/colorPrimaryDark"
+                android:text="Submit"
+                android:textColor="@color/colorWhite"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GENESYS.iml" filepath="$PROJECT_DIR$/GENESYS.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\st\AndroidStudioProjects\GENESYS\thisnewproject.iml" filepath="C:\Users\st\AndroidStudioProjects\GENESYS\thisnewproject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thisnewproject.iml" filepath="$PROJECT_DIR$/thisnewproject.iml" />
     </modules>
   </component>
 </project>

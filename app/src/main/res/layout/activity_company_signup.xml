@@ -1,66 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorWhite"
     tools:context="com.example.st.genesys.companySignup">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Company Name" />
 
-    <EditText
-        android:id="@+id/etcompname"
+
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <TextView
+                style="@style/titleStyle"
+                android:text="Register your company" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Company Address" />
+            <EditText
+                android:id="@+id/etcompname"
+                style="@style/inputStyle.Text"
+                android:hint="Company Name"/>
 
-    <EditText
-        android:id="@+id/etcompAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registration Code" />
-
-    <EditText
-        android:id="@+id/etcompcode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="type of Business" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/combusitype"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PASSWORD" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/compassword"/>
+            <EditText
+                android:id="@+id/etcompAddress"
+                style="@style/inputStyle.Text"
+                android:hint="Company Address"/>
 
 
-    <Button
-        android:id="@+id/comsignup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:text="Sign UP" />
+            <EditText
+                android:id="@+id/etcompcode"
+                style="@style/inputStyle.Text"
+                android:hint="Company Registration No"/>
+
+
+            <EditText
+                android:id="@+id/combusitype"
+                style="@style/inputStyle.Text"
+                android:hint="Type of business"/>
+
+
+            <EditText
+                android:id="@+id/compassword"
+                style="@style/inputStyle.Text"
+                android:hint="Account Password"/>
+
+
+            <Button
+                android:id="@+id/comsignup"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@color/colorPrimaryDark"
+                android:text="Sign Up"
+                android:textColor="@color/colorWhite"/>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

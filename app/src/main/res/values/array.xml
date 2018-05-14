@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="companies">
+        <item>EOH</item>
+        <item>Microsoft</item>
+        <item>Kelly Quest</item>
+        <item>Oracle</item>
+        <item>Dstv</item>
+    </array>
+</resources>

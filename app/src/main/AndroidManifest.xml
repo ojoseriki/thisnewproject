@@ -18,7 +18,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomePage" />
-        <activity android:name=".DecidePage" />
         <activity android:name=".employeeSignup" />
         <activity android:name=".companySignup" />
         <activity android:name=".goodsPage" />

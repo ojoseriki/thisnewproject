@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="inputWidth">250dp</dimen>
+    <dimen name="inputHeight">35dp</dimen>
+    <dimen name="titleTextSize">30sp</dimen>
+</resources>
